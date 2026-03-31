@@ -1,0 +1,49 @@
+# 虚拟环境的创建和激活
+不要直接用系统自带的 Python，也不要直接在“裸”环境里装库。在未来的每个项目中都可以建立一个虚拟环境。
+我是在macbook上用vscode编译，所以我的流程是：
+python3 -m venv ai_venv #创建环境，ai_venv是虚拟环境的名称
+source ai_env/bin/activate #激活环境
+
+#攻克Numpy,Pandas和Matplotlib
+
+##Numpy
+为什么学：AI 的本质就是矩阵乘法。
+任务：
+理解 ndarray 和 Python 原生 list 的区别（速度差一万倍）。
+学会创建矩阵：np.array, np.zeros, np.arange。
+
+代码练习：
+import numpy as np
+a = np.array([[1,2],[3,4]])
+b = np.array([[5,6],[7,8]])
+c = np.dot(a,b)
+print(c)
+
+##Pandas 
+为什么学：处理表格数据、CSV 文件全靠它。
+任务：
+理解 DataFrame（就是一张表）。
+学会读取数据：pd.read_csv('file.csv')。
+学会看数据：.head(), .describe(), .info()。
+
+代码练习：
+import pandas as pd
+df = pd.DataFrame({
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'City': ['New York', 'Los Angeles', 'Chicago']
+})
+print(df)
+
+##Matplotlib
+为什么学：数据看不懂？画出来就看懂了。
+任务：
+安装：pip install matplotlib
+学会画折线图 plt.plot() 和散点图 plt.scatter()。
+
+代码练习：
+import matplotlib as plt
+x = np.linspace(0,10,100)
+y = np.sin(x)
+plt.plot(x, y)
+plt.show()
